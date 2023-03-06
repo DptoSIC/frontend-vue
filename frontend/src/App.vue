@@ -1,5 +1,5 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 import SintaxisOptions from './components/SintaxisOptions.vue'
 </script>
 
@@ -13,7 +13,7 @@ import SintaxisOptions from './components/SintaxisOptions.vue'
     </a>
   </div>
   <SintaxisOptions />
-  <HelloWorld msg="Vite + Vue" />
+  <!-- <HelloWorld msg="Vite + Vue" /> -->
 </template>
 
 <style scoped>

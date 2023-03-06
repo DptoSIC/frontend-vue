@@ -1,5 +1,10 @@
 <script>
+import ElementoLista from './ElementoLista.vue'
+
 export default {
+  components: {
+    ElementoLista
+  },
   data() {
     return {
       count: 1,
@@ -67,9 +72,18 @@ export default {
 
     <div>
       Ejemplo v-for
+      <!--
+
+        EJEMPLO DE v-for USADO DIRECTAMENTE CON ETIQUETA
+
       <div v-for="elemento of array">
         Su valor es: {{ elemento.valor }} y es {{ paridad(elemento.valor) }}
-      </div>
+      </div> -->
+
+      <!-- 
+        EJEMPLO DE v-for CON UN COMPONENTE CON PROPIEDAD elemento
+      -->
+      <ElementoLista v-for="elemento of array" :elemento="elemento" />
     </div>
   </div>
 </template>
