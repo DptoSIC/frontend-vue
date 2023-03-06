@@ -13,11 +13,20 @@ export default {
       console.log('Ejecuto suma por nuevo valor', this.array[1])
       return this.array.reduce((p, c) => p + c.valor, 0)
     },
-    esPar() {
-      return this.suma % 2 == 0
+    esParSuma() {
+      return this.esPar(this.suma)
     },
-    paridad() {
-      return this.esPar ? 'par' : 'impar'
+    paridadSuma() {
+      return this.paridad(this.suma)
+    }
+  },
+  methods: {
+    esPar(numero) {
+      return numero % 2 == 0
+    },
+    paridad(numero) {
+      // console.log('Ejecutando metodo paridad con número ' + numero)
+      return this.esPar(numero) ? 'par' : 'impar'
     }
   },
 
@@ -52,8 +61,15 @@ export default {
       Ejemplo v-if: 
       <!-- VARIAS FORMAS DE HACER LO MISMO. SE COMENTAN LAS PEORES POR SER MENOS LEGIBLES -->
       <!-- Suma {{ suma }} es <span v-if="suma % 2 == 0">par</span><span v-else>impar</span> -->
-      Suma {{ suma }} es {{ paridad }}
+      Suma {{ suma }} es {{ paridadSuma }}
       <!-- Suma {{ suma }} es <span v-show="suma % 2 != 0">im</span>par -->
+    </div>
+
+    <div>
+      Ejemplo v-for
+      <div v-for="elemento of array">
+        Su valor es: {{ elemento.valor }} y es {{ paridad(elemento.valor) }}
+      </div>
     </div>
   </div>
 </template>
