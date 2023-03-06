@@ -12,6 +12,12 @@ export default {
     suma() {
       console.log('Ejecuto suma por nuevo valor', this.array[1])
       return this.array.reduce((p, c) => p + c.valor, 0)
+    },
+    esPar() {
+      return this.suma % 2 == 0
+    },
+    paridad() {
+      return this.esPar ? 'par' : 'impar'
     }
   },
 
@@ -34,10 +40,20 @@ export default {
 
 <template>
   <div>
-    Esto es el componente SintaxisOptions<br>
-    Valor de count es {{ count }}<br>
-    El mensaje es {{ mensaje }}<br>
-    <button type="button" @click="array[1].valor++">count is {{ suma }}</button><br>
-    La suma es {{ suma }}
+    <div>
+      Esto es el componente SintaxisOptions<br>
+      Valor de count es {{ count }}<br>
+      El mensaje es {{ mensaje }}<br>
+      <button type="button" @click="array[1].valor++">count is {{ suma }}</button><br>
+      La suma es {{ suma }}
+    </div>
+    
+    <div>
+      Ejemplo v-if: 
+      <!-- VARIAS FORMAS DE HACER LO MISMO. SE COMENTAN LAS PEORES POR SER MENOS LEGIBLES -->
+      <!-- Suma {{ suma }} es <span v-if="suma % 2 == 0">par</span><span v-else>impar</span> -->
+      Suma {{ suma }} es {{ paridad }}
+      <!-- Suma {{ suma }} es <span v-show="suma % 2 != 0">im</span>par -->
+    </div>
   </div>
 </template>
