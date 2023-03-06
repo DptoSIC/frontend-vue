@@ -8,6 +8,12 @@ export default {
       array: [ { valor: 3 }, { valor: 2 } ]
     }
   },
+  computed: {
+    suma() {
+      console.log('Ejecuto suma por nuevo valor', this.array[1])
+      return this.array.reduce((p, c) => p + c.valor, 0)
+    }
+  },
 
   // `mounted` is a lifecycle hook which we will explain later
   created() {
@@ -21,15 +27,17 @@ export default {
     this.objeto = objetoNuevo
     console.log("this.objeto es: ", this.objeto)
     console.log("objetoNuevo es: ", objetoNuevo)
+    console.log("suma es: ", this.suma)
   }
 }
 </script>
 
 <template>
   <div>
-      Esto es el componente SintaxisOptions<br>
-      Valor de count es {{ count }}<br>
-      El mensaje es {{ mensaje }}<br>
-      <button type="button" @click="objeto.valor++">count is {{ objeto.valor }}</button><br>
+    Esto es el componente SintaxisOptions<br>
+    Valor de count es {{ count }}<br>
+    El mensaje es {{ mensaje }}<br>
+    <button type="button" @click="array[1].valor++">count is {{ suma }}</button><br>
+    La suma es {{ suma }}
   </div>
 </template>
