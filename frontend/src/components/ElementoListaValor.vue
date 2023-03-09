@@ -4,6 +4,7 @@ export default {
     nombreComponente: String,
     valor: Number
   },
+  emits: [ 'clickNombre', 'clickValor' ],
   data() {
     return { }
   },
@@ -17,7 +18,7 @@ export default {
   },
   methods: {
     clickValor(evento) {
-      this.$emit('clickValor', this.valor, this.paridad, evento)
+        this.$emit('clickValor', this.valor, this.paridad, evento)
     }
   }
 }
