@@ -12,7 +12,70 @@ export default {
       count: 1,
       mensaje: "Hola mundo",
       objeto: undefined,
-      array: [ { valor: 3 }, { valor: 2 } ]
+      array: [ { valor: 3 }, { valor: 2 } ],
+      participantes: [
+                      {
+                        "nombre" : "Barcelona",
+                        "id" : "FCBARC(ESP)"
+                      }, {
+                        "nombre" : "Real Madrid",
+                        "id" : "RMADRI(ESP)"
+                      }, {
+                        "nombre" : "Málaga",
+                        "id" : "MALAGA(ESP)"
+                      }, {
+                        "nombre" : "Eibar",
+                        "id" : "EIBAR(ESP)"
+                      }, {
+                        "nombre" : "Alavés",
+                        "id" : "ALAVES(ESP)"
+                      }, {
+                        "nombre" : "Valencia",
+                        "id" : "VALENC(ESP)"
+                      }, {
+                        "nombre" : "Las Palmas",
+                        "id" : "LASPAL(ESP)"
+                      }, {
+                        "nombre" : "Real Sociedad",
+                        "id" : "RSOCIE(ESP)"
+                      }, {
+                        "nombre" : "Girona",
+                        "id" : "GIRONA(ESP)"
+                      }, {
+                        "nombre" : "Atlético de Madrid",
+                        "id" : "ATLMAD(ESP)"
+                      }, {
+                        "nombre" : "Sevilla",
+                        "id" : "SEVILA(ESP)"
+                      }, {
+                        "nombre" : "Cádiz",
+                        "id" : "CADIZ(ESP)"
+                      }, {
+                        "nombre" : "Gimnastic",
+                        "id" : "NASTIC(ESP)"
+                      }, {
+                        "nombre" : "Huesca",
+                        "id" : "HUESCA(ESP)"
+                      }, {
+                        "nombre" : "Sevilla Atlético",
+                        "id" : "SEVATL(ESP)"
+                      }, {
+                        "nombre" : "Barcelona B",
+                        "id" : "BARCAB(ESP)"
+                      }, {
+                        "nombre" : "Córdoba",
+                        "id" : "CORDOB(ESP)"
+                      }, {
+                        "nombre" : "Sporting",
+                        "id" : "SPGIJO(ESP)"
+                      }, {
+                        "nombre" : "Oviedo",
+                        "id" : "OVIEDO(ESP)"
+                      }, {
+                        "nombre" : "Almería",
+                        "id" : "ALMERI(ESP)"
+                      }
+                    ]
     }
   },
   computed: {
@@ -94,6 +157,10 @@ export default {
                           @clickNombre.once="elementoClickeado('Hecho click en nombre')"
                           @clickValor="elementoClickeado"/>
                           <!-- @click="elementoClickeado('Click en ' + elemento.valor)"/> -->
+
+      <ol>
+        <li v-for="participante of participantes">{{ participante.nombre }}</li>
+      </ol>
     </div>
   </div>
 </template>
