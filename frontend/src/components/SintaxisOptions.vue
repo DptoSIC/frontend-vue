@@ -35,8 +35,8 @@ export default {
       // console.log('Ejecutando metodo paridad con número ' + numero)
       return this.esPar(numero) ? 'par' : 'impar'
     },
-    elementoClickeado(elemento) {
-      console.log(elemento)
+    elementoClickeado(elemento, paridad, evento) {
+      console.log(elemento, paridad, evento)
     }
   },
 

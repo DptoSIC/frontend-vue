@@ -16,8 +16,8 @@ export default {
     }
   },
   methods: {
-    clickValor() {
-      this.$emit('clickValor', this.valor)
+    clickValor(evento) {
+      this.$emit('clickValor', this.valor, this.paridad, evento)
     }
   }
 }
@@ -26,6 +26,6 @@ export default {
 <template>
   <div>
     Desde <code @click="$emit('clickNombre')">{{ nombreComponente }}</code>,
-      valor es: <span @click="clickValor" >{{ valor }}</span> y es {{ paridad }}
+      valor es: <span @click="clickValor">{{ valor }}</span> y es {{ paridad }}
   </div>
 </template>
