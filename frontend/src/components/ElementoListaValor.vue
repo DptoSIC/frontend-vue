@@ -20,6 +20,7 @@ export default {
 
 <template>
   <div>
-    Desde <code>{{ nombreComponente }}</code>, valor es: {{ valor }} y es {{ paridad }}
+    Desde <code @click="$emit('clickNombre')">{{ nombreComponente }}</code>,
+      valor es: {{ valor }} y es {{ paridad }}
   </div>
 </template>
