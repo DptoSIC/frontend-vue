@@ -60,7 +60,7 @@ export default {
       Esto es el componente SintaxisOptions<br>
       Valor de count es {{ count }}<br>
       El mensaje es {{ mensaje }}<br>
-      <button type="button" @click="array[1].valor++">count is {{ suma }}</button><br>
+      <button type="button" @click="array[1].valor++" :disabled="!esPar(array[1].valor)">count is {{ suma }}</button><br>
       La suma es {{ suma }}
     </div>
     
