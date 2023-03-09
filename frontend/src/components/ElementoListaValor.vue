@@ -14,6 +14,11 @@ export default {
     paridad() {
       return this.esPar ? 'par' : 'impar'
     }
+  },
+  methods: {
+    clickValor() {
+      this.$emit('clickValor', this.valor)
+    }
   }
 }
 </script>
@@ -21,6 +26,6 @@ export default {
 <template>
   <div>
     Desde <code @click="$emit('clickNombre')">{{ nombreComponente }}</code>,
-      valor es: {{ valor }} y es {{ paridad }}
+      valor es: <span @click="clickValor" >{{ valor }}</span> y es {{ paridad }}
   </div>
 </template>
