@@ -1,9 +1,11 @@
 <script>
 import ElementoLista from './ElementoLista.vue'
+import ElementoListaValor from './ElementoListaValor.vue'
 
 export default {
   components: {
-    ElementoLista
+    ElementoLista,
+    ElementoListaValor
   },
   data() {
     return {
@@ -84,6 +86,7 @@ export default {
         EJEMPLO DE v-for CON UN COMPONENTE CON PROPIEDAD elemento
       -->
       <ElementoLista v-for="elemento of array" :elemento="elemento" />
+      <ElementoListaValor v-for="elemento of array" :valor="elemento.valor" />
     </div>
   </div>
 </template>
