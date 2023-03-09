@@ -91,7 +91,7 @@ export default {
       -->
       <!-- <ElementoLista v-for="elemento of array" :elemento="elemento" /> -->
       <ElementoListaValor v-for="elemento of array" :valor="elemento.valor" nombreComponente="ElementoListaValor"
-                          @clickNombre="elementoClickeado('Hecho click en nombre')"
+                          @clickNombre.once="elementoClickeado('Hecho click en nombre')"
                           @clickValor="elementoClickeado"/>
                           <!-- @click="elementoClickeado('Click en ' + elemento.valor)"/> -->
     </div>
