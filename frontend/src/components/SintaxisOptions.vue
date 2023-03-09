@@ -34,6 +34,9 @@ export default {
     paridad(numero) {
       // console.log('Ejecutando metodo paridad con número ' + numero)
       return this.esPar(numero) ? 'par' : 'impar'
+    },
+    elementoClickeado(elemento) {
+      console.log(elemento)
     }
   },
 
@@ -60,7 +63,8 @@ export default {
       Esto es el componente SintaxisOptions<br>
       Valor de count es {{ count }}<br>
       El mensaje es {{ mensaje }}<br>
-      <button type="button" @click="array[1].valor++" :disabled="!esPar(array[1].valor)">count is {{ suma }}</button><br>
+      <!-- <button type="button" @click="array[1].valor++" :disabled="!esPar(array[1].valor)">count is {{ suma }}</button><br> -->
+      <button type="button" @click="array[1].valor++">count is {{ suma }}</button><br>
       La suma es {{ suma }}
     </div>
     
@@ -85,8 +89,9 @@ export default {
       <!-- 
         EJEMPLO DE v-for CON UN COMPONENTE CON PROPIEDAD elemento
       -->
-      <ElementoLista v-for="elemento of array" :elemento="elemento" />
-      <ElementoListaValor v-for="elemento of array" :valor="elemento.valor" nombreComponente="ElementoListaValor"/>
+      <!-- <ElementoLista v-for="elemento of array" :elemento="elemento" /> -->
+      <ElementoListaValor v-for="elemento of array" :valor="elemento.valor" nombreComponente="ElementoListaValor"
+                          @click="elementoClickeado('Click en ' + elemento.valor)"/>
     </div>
   </div>
 </template>
