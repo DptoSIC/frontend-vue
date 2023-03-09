@@ -18,7 +18,9 @@ export default {
   },
   methods: {
     clickValor(evento) {
+      if (this.esPar) {
         this.$emit('clickValor', this.valor, this.paridad, evento)
+      }
     }
   }
 }
