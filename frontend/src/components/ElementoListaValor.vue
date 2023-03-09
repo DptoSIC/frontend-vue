@@ -18,7 +18,8 @@ export default {
   },
   methods: {
     clickValor(evento) {
-      if (this.esPar) {
+      // if (this.esPar) {
+      if (evento.target.classList.contains('par')) {
         this.$emit('clickValor', this.valor, this.paridad, evento)
       }
     }
@@ -29,6 +30,16 @@ export default {
 <template>
   <div>
     Desde <code @click="$emit('clickNombre')">{{ nombreComponente }}</code>,
-      valor es: <span @click="clickValor">{{ valor }}</span> y es {{ paridad }}
+      valor es: <span @click="clickValor" :class="{ par: esPar, menorDeCinco: valor < 5 }">{{ valor }}</span> y es {{ paridad }}
   </div>
 </template>
+
+<style>
+.par {
+  color: green;
+}
+
+.menorDeCinco {
+  font-weight: bold;
+}
+</style>
