@@ -1,6 +1,9 @@
 <script>
 export default {
-  props: [ 'valor' ],
+  props: {
+    nombreComponente: String,
+    valor: Number
+  },
   data() {
     return { }
   },
@@ -17,6 +20,6 @@ export default {
 
 <template>
   <div>
-    Desde <code>ElementoListaValor</code>, valor es: {{ valor }} y es {{ paridad }}
+    Desde <code>{{ nombreComponente }}</code>, valor es: {{ valor }} y es {{ paridad }}
   </div>
 </template>

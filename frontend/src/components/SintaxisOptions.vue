@@ -86,7 +86,7 @@ export default {
         EJEMPLO DE v-for CON UN COMPONENTE CON PROPIEDAD elemento
       -->
       <ElementoLista v-for="elemento of array" :elemento="elemento" />
-      <ElementoListaValor v-for="elemento of array" :valor="elemento.valor" />
+      <ElementoListaValor v-for="elemento of array" :valor="elemento.valor" nombreComponente="ElementoListaValor"/>
     </div>
   </div>
 </template>
