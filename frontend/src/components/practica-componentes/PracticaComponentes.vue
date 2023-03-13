@@ -1,6 +1,6 @@
 <script>
 import Participante from './Participante.vue'
-import participantesJson from '/src/assets/participantes.json'
+import participantesJson from '@/assets/participantes.json'
 
 export default {
     props: {

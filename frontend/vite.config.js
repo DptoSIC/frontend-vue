@@ -10,6 +10,7 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
+      "@": path.resolve(projectRootDir, "src"),
       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
     },
   }
