@@ -12,9 +12,17 @@ export default {
           participantes: participantesJson._embedded.participantes
         }
     },
+    computed: {
+      golesTotales() {
+        return this.participantes.reduce((p, c) => p + c.goles, 0)
+      }
+    },
     methods: {
       addTarjeta(color, participante) {
         participante.tarjetas[color + 's']++
+      },
+      tarjetasTotales(color) {
+        return this.participantes.reduce((p, c) => p + c.tarjetas[color], 0) 
       }
     },
     created() {
@@ -27,6 +35,15 @@ export default {
 </script>
 
 <template>
+  <div class="alert alert-warning">
+    <h2>Resultados totales</h2>
+    <p>Goles totales {{ golesTotales }}</p>
+    <p v-for="color of [ 'amarillas', 'rojas' ]">
+      Tarjetas {{ color }} totales {{ tarjetasTotales(color) }}
+    </p>
+  </div>
+
+  <h2>Resultados por participantes</h2>
   <div v-if="participantes" v-for="participante of participantes">
     <Participante :participante="participante"
                   @addGol="participante.goles++"
