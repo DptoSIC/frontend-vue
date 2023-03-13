@@ -1,6 +1,5 @@
 <script setup>
-// import HelloWorld from './components/HelloWorld.vue'
-import SintaxisOptions from './components/SintaxisOptions.vue'
+import PracticaComponentes from './components/practica-componentes/PracticaComponentes.vue';
 </script>
 
 <template>
@@ -12,8 +11,7 @@ import SintaxisOptions from './components/SintaxisOptions.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <SintaxisOptions />
-  <!-- <HelloWorld msg="Vite + Vue" /> -->
+  <PracticaComponentes></PracticaComponentes>
 </template>
 
 <style scoped>

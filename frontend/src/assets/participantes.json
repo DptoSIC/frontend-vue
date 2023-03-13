@@ -1,0 +1,368 @@
+{
+  "_embedded" : {
+    "participantes" : [ {
+      "nombre" : "Barcelona",
+      "id" : "FCBARC(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/FCBARC(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/FCBARC(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Real Madrid",
+      "id" : "RMADRI(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/RMADRI(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/RMADRI(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Málaga",
+      "id" : "MALAGA(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/MALAGA(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/MALAGA(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Eibar",
+      "id" : "EIBAR(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/EIBAR(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/EIBAR(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Alavés",
+      "id" : "ALAVES(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/ALAVES(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/ALAVES(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Valencia",
+      "id" : "VALENC(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/VALENC(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/VALENC(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Las Palmas",
+      "id" : "LASPAL(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/LASPAL(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/LASPAL(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Real Sociedad",
+      "id" : "RSOCIE(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/RSOCIE(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/RSOCIE(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Girona",
+      "id" : "GIRONA(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/GIRONA(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/GIRONA(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Atlético de Madrid",
+      "id" : "ATLMAD(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/ATLMAD(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/ATLMAD(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Sevilla",
+      "id" : "SEVILA(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/SEVILA(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/SEVILA(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Cádiz",
+      "id" : "CADIZ(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/CADIZ(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/CADIZ(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Gimnastic",
+      "id" : "NASTIC(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/NASTIC(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/NASTIC(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Huesca",
+      "id" : "HUESCA(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/HUESCA(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/HUESCA(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Sevilla Atlético",
+      "id" : "SEVATL(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/SEVATL(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/SEVATL(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Barcelona B",
+      "id" : "BARCAB(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/BARCAB(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/BARCAB(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Córdoba",
+      "id" : "CORDOB(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/CORDOB(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/CORDOB(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Sporting",
+      "id" : "SPGIJO(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/SPGIJO(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/SPGIJO(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Oviedo",
+      "id" : "OVIEDO(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/OVIEDO(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/OVIEDO(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Almería",
+      "id" : "ALMERI(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/ALMERI(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/ALMERI(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Lorca",
+      "id" : "LORCA(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/LORCA(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/LORCA(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Tenerife",
+      "id" : "TENERI(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/TENERI(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/TENERI(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Granada B",
+      "id" : "GRANAB(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/GRANAB(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/GRANAB(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Zaragoza",
+      "id" : "ZARAGO(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/ZARAGO(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/ZARAGO(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Alcorcón",
+      "id" : "ALCORC(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/ALCORC(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/ALCORC(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Cultural Leonesa",
+      "id" : "CULEON(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/CULEON(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/CULEON(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Valladolid",
+      "id" : "VALLAD(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/VALLAD(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/VALLAD(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Albacete",
+      "id" : "ALBACE(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/ALBACE(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/ALBACE(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Lugo",
+      "id" : "LUGO(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/LUGO(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/LUGO(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Rayo Vallecano",
+      "id" : "RAYOVA(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/RAYOVA(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/RAYOVA(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Osasuna",
+      "id" : "OSASUN(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/OSASUN(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/OSASUN(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Reus",
+      "id" : "REUS(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/REUS(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/REUS(ESP)"
+        }
+      }
+    }, {
+      "nombre" : "Numancia",
+      "id" : "NUMANC(ESP)",
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/NUMANC(ESP)"
+        },
+        "participante" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/participantes/NUMANC(ESP)"
+        }
+      }
+    } ]
+  }
+}
