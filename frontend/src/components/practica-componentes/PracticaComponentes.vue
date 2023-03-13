@@ -31,8 +31,24 @@ export default {
     <Participante :participante="participante"
                   @addGol="participante.goles++"
                   @addTarjeta="addTarjeta($event, participante)"/>
-    <div>Goles {{ participante.goles }}</div>
-    <div>Tarjetas {{ participante.tarjetas }}</div>
+    <div>Goles <font-awesome-icon icon="fa-solid fa-futbol" v-for="g in participante.goles" class="me-2"/></div>
+    <div>Tarjetas <span v-for="color of [ 'amarillas', 'rojas' ]">
+                    <font-awesome-icon icon="fa-solid fa-square-full" v-for="t in participante.tarjetas[color]" class="me-2" :class="color"/></span>
+    </div>
     <hr>
   </div>
 </template>
+
+<style scoped>
+.amarillas {
+  color: yellow;
+}
+
+.rojas {
+  color: red;
+}
+
+.amarillas, .rojas {
+  border: 1px solid black;
+}
+</style>
