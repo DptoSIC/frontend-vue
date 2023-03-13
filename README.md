@@ -24,6 +24,17 @@ Hay muchas versiones distintas (podemos verlas con `nvm ls-remote`). [Instalarem
 nvm install --lts
 ```
 
+### Instalar Node.js **SI FALLA NVM**
+Vamos a usar la [guía para Ubuntu usando el gestor de paquetes](https://nodejs.org/es/download/package-manager/#distribuciones-linux-basadas-en-debian-y-ubuntu-paquetes-enterprise-linux-fedora-y-snap).
+> _NOTA: Necesita de curl, si no se tiene instalado hacerlo con `sudo apt-get install curl`._
+
+Usaremos la [versión LTS](https://github.com/nodesource/distributions/blob/master/README.md#using-ubuntu-4):
+
+```
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```
+
 Ahora comprobamos que se tiene instalado con `node -v`. Node también instala npm que es necesario para crear el proyecto.
 > _NOTA: hay alternativas a npm como [yarn](https://yarnpkg.com/). Nosotros vamos a usar npm. Como se pueden instalar distintas versiones de node es mejor usar algo que nos facilite la vida como [nvm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)._
 
@@ -68,3 +79,16 @@ git commit -m "Commit inicial"
 Vue cuenta con [Vue Devtools](https://devtools.vuejs.org/), una extensión para el navegador que nos va a ayudar a la hora de desarrollar. La instalamos y usamos con nuestra página de inicio para ver cómo funciona Vue.
 
 Ya podemos ir a la documentación de [Vue v3 con Options API](https://vuejs.org/guide/introduction.html#what-is-vue).
+
+## Añadir Bootstrap
+
+Seguir las [instrucciones de la documentación](https://getbootstrap.com/docs/5.3/getting-started/vite/).
+
+Hay que añadir su paquete npm (y el de popperjs):
+```
+npm i --save bootstrap @popperjs/core
+```
+
+Esto modificará el archivo `package.json`.
+
+Luego hay que modificar los ficheros `vite.config.js` para resolver las rutas de importación que se añaden en `main.js` y los estilos usando el fichero `styles.scss`.
