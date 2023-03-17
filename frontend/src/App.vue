@@ -4,7 +4,7 @@ import PracticaComponentes from './components/practica-componentes/PracticaCompo
 
 <template>
   <div class="container text-start">
-    <h1 class="my-5">Listado de participantes</h1>
+    <h1 class="my-5">Práctica de componentes</h1>
     <PracticaComponentes />
   </div>
 </template>

@@ -15,6 +15,9 @@ export default {
     computed: {
       coloresTarjetas() {
         return [ 'amarillas', 'rojas' ]
+      },
+      golesTotales() {
+        return this.participantes.reduce((p, c) => p + c.goles, 0)
       }
     },
     methods: {
@@ -23,6 +26,9 @@ export default {
       },
       tarjetasParticipante(participante) {
         return this.coloresTarjetas.reduce((p, c) => p + participante.tarjetas[c], 0)
+      },
+      tarjetasTotales(color) {
+        return this.participantes.reduce((p, c) => p + c.tarjetas[color], 0) 
       }
     },
     created() {
@@ -35,17 +41,28 @@ export default {
 </script>
 
 <template>
-  <div v-if="participantes" v-for="participante of participantes">
-    <Participante :participante="participante"
-                  @addGol="participante.goles++"
-                  @addTarjeta="addTarjeta($event, participante)"/>
-    <div v-if="participante.goles">Goles <font-awesome-icon icon="fa-solid fa-futbol" v-for="g in participante.goles" class="me-2"/></div>
-    <div v-else>No tienes goles</div>
-    <div v-if="tarjetasParticipante(participante)">Tarjetas <span v-for="color of coloresTarjetas">
-                    <font-awesome-icon icon="fa-solid fa-square-full" v-for="t in participante.tarjetas[color]" class="me-2" :class="color"/></span>
+  <div>
+    <div class="alert alert-warning">
+      <h2>Resultados totales</h2>
+      <p>Goles totales {{ golesTotales }}</p>
+      <p v-for="color of coloresTarjetas">
+        Tarjetas {{ color }} totales {{ tarjetasTotales(color) }}
+      </p>
     </div>
-    <div v-else>No tienes tarjetas</div>
-    <hr>
+
+    <h2>Resultados por participantes</h2>
+    <div v-if="participantes" v-for="participante of participantes">
+      <Participante :participante="participante"
+                    @addGol="participante.goles++"
+                    @addTarjeta="addTarjeta($event, participante)"/>
+      <div v-if="participante.goles">Goles <font-awesome-icon icon="fa-solid fa-futbol" v-for="g in participante.goles" class="me-2"/></div>
+      <div v-else>No tienes goles</div>
+      <div v-if="tarjetasParticipante(participante)">Tarjetas <span v-for="color of coloresTarjetas">
+                      <font-awesome-icon icon="fa-solid fa-square-full" v-for="t in participante.tarjetas[color]" class="me-2" :class="color"/></span>
+      </div>
+      <div v-else>No tienes tarjetas</div>
+      <hr>
+    </div>
   </div>
 </template>
 
