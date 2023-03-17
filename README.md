@@ -16,11 +16,11 @@ Necesita el entorno de ejecución [Node](https://nodejs.org/es/). Comprobar con 
 
 ### Instalar Node con nvm
 Se [recomienda usar un gestor de versiones](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) como [nvm](https://github.com/nvm-sh/nvm) con lo que nos instalaremos nvm:
- ```
+ ```bash
  wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
  ```
 Hay muchas versiones distintas (podemos verlas con `nvm ls-remote`). [Instalaremos la LTS](https://github.com/nvm-sh/nvm#long-term-support):
-```
+```bash
 nvm install --lts
 ```
 
@@ -30,7 +30,7 @@ Vamos a usar la [guía para Ubuntu usando el gestor de paquetes](https://nodejs.
 
 Usaremos la [versión LTS](https://github.com/nodesource/distributions/blob/master/README.md#using-ubuntu-4):
 
-```
+```bash
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 ```
@@ -42,7 +42,7 @@ Ahora comprobamos que se tiene instalado con `node -v`. Node también instala np
 
 Lo primero que hacemos es [crear nuestro proyecto con Vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project). Nos iremos a la carpeta donde queramos que nos haga toda la estructura (en nuestro caso la raíz de nuestro proyecto) y usaremos el siguiente comando:
 
-```
+```bash
 npm create vite@latest
 ```
 
@@ -55,12 +55,12 @@ Ahora renombramos la carpeta a `frontend`, para que sea igual que la estructura 
 
 En este momento tenemos todo lo que hace falta para arrancar la aplicación, pero no tenemos las dependencias. Hay que instalarlas:
 
-```
+```bash
 npm install
 ```
 
 Cuando finalice ya estamos listos para arrancar nuestra aplicación Vue:
-```
+```bash
 npm run dev
 ```
 > _NOTA: si queremos exponerla en nuestra LAN usaremos `npm run dev -- --host` (todos los guiones importan)._
@@ -71,7 +71,7 @@ Como vamos a empezar a trabajar con nuestro proyecto, es un buen momento para ha
 
 Realizaremos un commit inicial con todos los archivos a excepción de los archivos de imágenes (*.svg), `package-lock.json`, `extensions.json` y el `README.md` generado por Vite:
 
-```
+```bash
 git commit -m "Commit inicial"
 ```
 
@@ -85,10 +85,26 @@ Ya podemos ir a la documentación de [Vue v3 con Options API](https://vuejs.org/
 Seguir las [instrucciones de la documentación](https://getbootstrap.com/docs/5.3/getting-started/vite/).
 
 Hay que añadir su paquete npm (y el de popperjs):
-```
+```bash
 npm i --save bootstrap @popperjs/core
 ```
 
 Esto modificará el archivo `package.json`.
 
 Luego hay que modificar los ficheros `vite.config.js` para resolver las rutas de importación que se añaden en `main.js` y los estilos usando el fichero `styles.scss`.
+
+## Añadir Vue router
+
+Hay que instalar el paquete según la [documentación oficial](https://router.vuejs.org/installation.html):
+
+```bash
+npm install vue-router@4
+```
+
+Después [añadirlo a nuestra aplicación Vue](https://router.vuejs.org/guide/).
+
+Para seguir usando los imports, en vez de utilizar `Vue` o `VueRouter`, importaremos las funciones que nos hacen falta:
+
+```js
+import { createRouter, createWebHashHistory } from 'vue-router'
+```
