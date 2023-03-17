@@ -12,9 +12,17 @@ export default {
           participantes: participantesJson._embedded.participantes
         }
     },
+    computed: {
+      coloresTarjetas() {
+        return [ 'amarillas', 'rojas' ]
+      }
+    },
     methods: {
       addTarjeta(color, participante) {
         participante.tarjetas[color + 's']++
+      },
+      tarjetasParticipante(participante) {
+        return this.coloresTarjetas.reduce((p, c) => p + participante.tarjetas[c], 0)
       }
     },
     created() {
@@ -31,10 +39,12 @@ export default {
     <Participante :participante="participante"
                   @addGol="participante.goles++"
                   @addTarjeta="addTarjeta($event, participante)"/>
-    <div>Goles <font-awesome-icon icon="fa-solid fa-futbol" v-for="g in participante.goles" class="me-2"/></div>
-    <div>Tarjetas <span v-for="color of [ 'amarillas', 'rojas' ]">
+    <div v-if="participante.goles">Goles <font-awesome-icon icon="fa-solid fa-futbol" v-for="g in participante.goles" class="me-2"/></div>
+    <div v-else>No tienes goles</div>
+    <div v-if="tarjetasParticipante(participante)">Tarjetas <span v-for="color of coloresTarjetas">
                     <font-awesome-icon icon="fa-solid fa-square-full" v-for="t in participante.tarjetas[color]" class="me-2" :class="color"/></span>
     </div>
+    <div v-else>No tienes tarjetas</div>
     <hr>
   </div>
 </template>
