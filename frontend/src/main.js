@@ -4,6 +4,7 @@ import App from './App.vue'
 import Home from '@/components/practica-componentes/PracticaComponentes.vue'
 import About from '@/components/practica-rounting/About.vue'
 import ParticipanteInfo from '@/components/practica-rounting/ParticipanteInfo.vue'
+import NotFound from '@/components/practica-rounting/NotFound.vue'
 
 import { createRouter, createWebHashHistory } from 'vue-router'
 
@@ -26,6 +27,7 @@ const routes = [
   { path: '/', component: Home },
   { path: '/about', component: About },
   { path: '/participante/:id', component: ParticipanteInfo },
+  { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 ]
 
 const router = createRouter({
