@@ -8,6 +8,8 @@ import NotFound from '@/components/practica-rounting/NotFound.vue'
 
 import { createRouter, createWebHashHistory } from 'vue-router'
 
+import { createPinia } from 'pinia'
+
 // Import our custom CSS
 import './scss/styles.scss'
 // Import all of Bootstrap's JS
@@ -23,6 +25,8 @@ import { faFutbol, faSquareFull } from '@fortawesome/free-solid-svg-icons'
 /* add icons to the library */
 library.add(faFutbol, faSquareFull)
 
+const pinia = createPinia()
+
 const routes = [
   { path: '/', component: Home },
   { path: '/about', component: About },
@@ -36,6 +40,8 @@ const router = createRouter({
 })
 
 const app = createApp(App)
+
+app.use(pinia)
 
 app.use(router)
 
