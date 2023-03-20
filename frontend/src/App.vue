@@ -4,8 +4,13 @@ import PracticaComponentes from './components/practica-componentes/PracticaCompo
 
 <template>
   <div class="container text-start">
-    <h1 class="my-5">Práctica de componentes</h1>
-    <PracticaComponentes />
+    <h1 class="my-5">Práctica de routing</h1>
+
+    <router-link to="/">Home</router-link>
+    <router-link to="/about">About</router-link>
+
+    <!-- <PracticaComponentes /> -->
+    <router-view></router-view>
   </div>
 </template>
 
