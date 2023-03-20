@@ -1,15 +1,18 @@
 <script>
-import participantesJson from '@/assets/participantes.json'
+// import participantesJson from '@/assets/participantes.json'
 import Participante from '../practica-componentes/Participante.vue'
+import { mapState } from 'pinia'
+import { participantesStore } from '@/stores/participantes'
 
 export default {
   components: { Participante },
   computed: {
-    participantes() {
-      return participantesJson._embedded.participantes
-    },
+    // participantes() {
+    //   return participantesJson._embedded.participantes
+    // },
+    ...mapState(participantesStore, [ 'participantes' ]),
     participante() {
-      return this.participantes.find(p => p.id == this.$route.params.id)
+        return this.participantes.find(p => p.id == this.$route.params.id)
     }
   },
   methods: {
