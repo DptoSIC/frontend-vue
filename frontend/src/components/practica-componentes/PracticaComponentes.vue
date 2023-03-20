@@ -3,9 +3,6 @@ import Participante from './Participante.vue'
 import participantesJson from '@/assets/participantes.json'
 
 export default {
-    props: {
-        participante: { id: String, nombre: String }
-    },
     components: { Participante },
     data() {
         return {
@@ -33,8 +30,8 @@ export default {
     },
     created() {
       this.participantes.forEach(p => {
-                                        p.goles = 0
-                                        p.tarjetas = { amarillas: 0, rojas: 0 }
+                                        if (!p.goles) p.goles = 0
+                                        if (!p.tarjetas) p.tarjetas = { amarillas: 0, rojas: 0 }
                                       })
     }
 }
@@ -61,6 +58,7 @@ export default {
                       <font-awesome-icon icon="fa-solid fa-square-full" v-for="t in participante.tarjetas[color]" class="me-2" :class="color"/></span>
       </div>
       <div v-else>No tienes tarjetas</div>
+      <router-link :to="`/participante/${participante.id}`">Ver Participante</router-link>
       <hr>
     </div>
   </div>

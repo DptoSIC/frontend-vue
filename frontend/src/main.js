@@ -3,9 +3,9 @@ import './style.css'
 import App from './App.vue'
 import Home from '@/components/practica-componentes/PracticaComponentes.vue'
 import About from '@/components/practica-rounting/About.vue'
+import ParticipanteInfo from '@/components/practica-rounting/ParticipanteInfo.vue'
 
 import { createRouter, createWebHashHistory } from 'vue-router'
-
 
 // Import our custom CSS
 import './scss/styles.scss'
@@ -25,6 +25,7 @@ library.add(faFutbol, faSquareFull)
 const routes = [
   { path: '/', component: Home },
   { path: '/about', component: About },
+  { path: '/participante/:id', component: ParticipanteInfo },
 ]
 
 const router = createRouter({
