@@ -1,7 +1,7 @@
 <script>
 // import participantesJson from '@/assets/participantes.json'
 import Participante from '../practica-componentes/Participante.vue'
-import { mapState } from 'pinia'
+import { mapActions, mapState } from 'pinia'
 import { participantesStore } from '@/stores/participantes'
 
 export default {
@@ -12,10 +12,12 @@ export default {
     // },
     ...mapState(participantesStore, [ 'participantes' ]),
     participante() {
-        return this.participantes.find(p => p.id == this.$route.params.id)
+        // return this.participantes.find(p => p.id == this.$route.params.id)
+        return this.getParticipantePorId(this.$route.params.id)
     }
   },
   methods: {
+    ...mapActions(participantesStore, [ 'getParticipantePorId' ]),
     addTarjeta(evento) {
       console.log(evento)
     }

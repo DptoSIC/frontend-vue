@@ -11,4 +11,9 @@ export const participantesStore = defineStore('participantes', {
   state: () => ({
     participantes: participantes
   }),
+  actions: {
+    getParticipantePorId(id) {
+        return this.participantes.find(p => p.id == id)
+    }
+  }
 })
