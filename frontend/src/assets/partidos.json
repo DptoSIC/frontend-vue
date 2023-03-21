@@ -1,0 +1,110 @@
+{
+  "_embedded" : {
+    "partidos" : [ {
+      "idLocal" : "OVIEDO(ESP)",
+      "idVisitante" : "RSOCIE(ESP)",
+      "timestamp" : 1588791734267,
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/6"
+        },
+        "partido" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/6"
+        },
+        "sucesos" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/6/sucesos"
+        }
+      }
+    }, {
+      "idLocal" : "SEVILA(ESP)",
+      "idVisitante" : "FCBARC(ESP)",
+      "timestamp" : 1588791738286,
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/10"
+        },
+        "partido" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/10"
+        },
+        "sucesos" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/10/sucesos"
+        }
+      }
+    }, {
+      "idLocal" : "RMADRI(ESP)",
+      "idVisitante" : "CADIZ(ESP)",
+      "timestamp" : 1588791739278,
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/11"
+        },
+        "partido" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/11"
+        },
+        "sucesos" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/11/sucesos"
+        }
+      }
+    }, {
+      "idLocal" : "NASTIC(ESP)",
+      "idVisitante" : "MALAGA(ESP)",
+      "timestamp" : 1588791740274,
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/12"
+        },
+        "partido" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/12"
+        },
+        "sucesos" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/12/sucesos"
+        }
+      }
+    }, {
+      "idLocal" : "EIBAR(ESP)",
+      "idVisitante" : "GIRONA(ESP)",
+      "timestamp" : 1588791742272,
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/14"
+        },
+        "partido" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/14"
+        },
+        "sucesos" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/14/sucesos"
+        }
+      }
+    }, {
+      "idLocal" : "ALAVES(ESP)",
+      "idVisitante" : "ATLMAD(ESP)",
+      "timestamp" : 1588791745403,
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/17"
+        },
+        "partido" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/17"
+        },
+        "sucesos" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/17/sucesos"
+        }
+      }
+    }, {
+      "idLocal" : "VALENC(ESP)",
+      "idVisitante" : "LORCA(ESP)",
+      "timestamp" : 1588791747392,
+      "_links" : {
+        "self" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/19"
+        },
+        "partido" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/19"
+        },
+        "sucesos" : {
+          "href" : "http://pruebaapi-lonchezas.b4a.run/api/partidos/19/sucesos"
+        }
+      }
+    } ]
+  }
+}
