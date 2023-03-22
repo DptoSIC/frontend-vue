@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 import Home from '@/components/practica-componentes/PracticaComponentes.vue'
+import ListadoPartidos from '@/components/partidos/ListadoPartidos.vue'
 import About from '@/components/practica-rounting/About.vue'
 import ParticipanteInfo from '@/components/practica-rounting/ParticipanteInfo.vue'
 import NotFound from '@/components/practica-rounting/NotFound.vue'
@@ -29,6 +30,7 @@ const pinia = createPinia()
 
 const routes = [
   { path: '/', component: Home },
+  { path: '/partidos', component: ListadoPartidos },
   { path: '/about', component: About },
   { path: '/participante/:id', component: ParticipanteInfo },
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
