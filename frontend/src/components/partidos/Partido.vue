@@ -1,6 +1,7 @@
 <script>
 import { mapActions } from 'pinia'
 import { participantesStore } from '@/stores/participantes'
+import { dateToString } from '@/utils/utils'
 
 export default {
   props: [ 'partido' ],
@@ -11,6 +12,9 @@ export default {
     visitante() {
       return this.getParticipantePorId(this.partido.idVisitante)
     },
+    fecha() {
+      return dateToString(new Date(this.partido.timestamp))
+    }
   },
   methods: {
     ...mapActions(participantesStore, [ 'getParticipantePorId' ]),
@@ -20,6 +24,7 @@ export default {
 
 <template>
   <div>
+    <div>{{ fecha }}</div>
     <span>{{ local.nombre }}</span>
     <span>{{ visitante.nombre }}</span>
   </div>
