@@ -1,20 +1,26 @@
 <script>
+import { mapActions } from 'pinia'
+import { participantesStore } from '@/stores/participantes'
+
 export default {
   props: [ 'partido' ],
   computed: {
     local() {
-      return this.partido.idLocal
+      return this.getParticipantePorId(this.partido.idLocal)
     },
     visitante() {
-      return this.partido.idVisitante
+      return this.getParticipantePorId(this.partido.idVisitante)
     },
+  },
+  methods: {
+    ...mapActions(participantesStore, [ 'getParticipantePorId' ]),
   }
 }
 </script>
 
 <template>
   <div>
-    <span>{{ local }}</span>
-    <span>{{ visitante }}</span>
+    <span>{{ local.nombre }}</span>
+    <span>{{ visitante.nombre }}</span>
   </div>
 </template>
