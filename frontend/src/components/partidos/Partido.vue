@@ -37,8 +37,8 @@ export default {
 <template>
   <div>
     <div>{{ fecha }}</div>
-    <span>{{ local.nombre }}</span>
-    <span>{{ golesLocal }} - {{ golesVisitante }}</span>
-    <span>{{ visitante.nombre }}</span>
+    <span class="fs-3 me-2">{{ local.nombre }}</span>
+    <span class="fs-3 me-2">{{ golesLocal }} - {{ golesVisitante }}</span>
+    <span class="fs-3 me-2">{{ visitante.nombre }}</span>
   </div>
 </template>

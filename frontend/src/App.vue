@@ -4,14 +4,15 @@ import PracticaComponentes from './components/practica-componentes/PracticaCompo
 
 <template>
   <div class="container text-start">
-    <h1 class="my-5">Práctica con Datos Deportivos</h1>
+    <h1 class="my-3">Práctica con Datos Deportivos</h1>
 
-    <router-link :to="{ name: 'home'}" class="badge bg-warning me-2">Home</router-link>
-    <router-link :to="{ name: 'partidos'}" class="badge bg-warning me-2">Partidos</router-link>
-    <router-link :to="{ name: 'about'}">About</router-link>
+    <div class="mb-3">
+      <router-link :to="{ name: 'home' }" :class="$route.name == 'home' ? 'text-white bg-success' : ''" class="text-decoration-none p-2 me-2">Home</router-link>
+      <router-link :to="{ name: 'partidos' }" :class="$route.name == 'partidos' ? 'text-white bg-success' : ''" class="text-decoration-none p-2 me-2">Partidos</router-link>
+      <router-link :to="{ name: 'about' }" :class="$route.name == 'about' ? 'text-white bg-success' : ''" class="text-decoration-none p-2 me-2">About</router-link>
+    </div>
 
-    <!-- <PracticaComponentes /> -->
-    <router-view class="alert alert-danger"></router-view>
+    <router-view></router-view>
   </div>
 </template>
 
