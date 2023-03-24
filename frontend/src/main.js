@@ -29,10 +29,10 @@ library.add(faFutbol, faSquareFull)
 const pinia = createPinia()
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/partidos', component: ListadoPartidos },
-  { path: '/about', component: About },
-  { path: '/participante/:id', component: ParticipanteInfo },
+  { path: '/', component: Home, name: 'home' },
+  { path: '/partidos', component: ListadoPartidos, name: 'partidos' },
+  { path: '/about', component: About, name: 'about' },
+  { path: '/participante/:identificador', component: ParticipanteInfo, name: 'participante' },
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 ]
 

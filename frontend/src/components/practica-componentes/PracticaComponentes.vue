@@ -61,7 +61,7 @@ export default {
                       <font-awesome-icon icon="fa-solid fa-square-full" v-for="t in participante.tarjetas[color]" class="me-2" :class="color"/></span>
       </div>
       <div v-else>No tienes tarjetas</div>
-      <router-link :to="`/participante/${participante.id}`">Ver Participante</router-link>
+      <router-link :to="{ name: 'participante', params: { identificador: participante.id }}">Ver Participante</router-link>
       <hr>
     </div>
   </div>

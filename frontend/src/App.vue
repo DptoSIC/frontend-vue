@@ -6,9 +6,9 @@ import PracticaComponentes from './components/practica-componentes/PracticaCompo
   <div class="container text-start">
     <h1 class="my-5">Práctica con Datos Deportivos</h1>
 
-    <router-link to="/" class="badge bg-warning me-2">Home</router-link>
-    <router-link to="/partidos" class="badge bg-warning me-2">Partidos</router-link>
-    <router-link to="/about">About</router-link>
+    <router-link :to="{ name: 'home'}" class="badge bg-warning me-2">Home</router-link>
+    <router-link :to="{ name: 'partidos'}" class="badge bg-warning me-2">Partidos</router-link>
+    <router-link :to="{ name: 'about'}">About</router-link>
 
     <!-- <PracticaComponentes /> -->
     <router-view class="alert alert-danger"></router-view>

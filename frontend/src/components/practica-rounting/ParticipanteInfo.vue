@@ -13,7 +13,7 @@ export default {
     ...mapState(participantesStore, [ 'participantes' ]),
     participante() {
         // return this.participantes.find(p => p.id == this.$route.params.id)
-        return this.getParticipantePorId(this.$route.params.id)
+        return this.getParticipantePorId(this.$route.params.identificador)
     }
   },
   methods: {
