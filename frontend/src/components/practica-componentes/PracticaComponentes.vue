@@ -17,18 +17,27 @@ export default {
         return [ 'amarillas', 'rojas' ]
       },
       golesTotales() {
-        return this.participantes.reduce((p, c) => p + c.goles, 0)
+        return this.participantes.reduce((p, c) => p + (c.goles ?? 0), 0)
       }
     },
     methods: {
       addTarjeta(color, participante) {
+        if (!participante.tarjetas) {
+          participante.tarjetas = {}
+        }
+        if (!this.cantidadTarjetas(participante, color + 's') > 0) {
+          participante.tarjetas[color + 's'] = 0
+        }
         participante.tarjetas[color + 's']++
       },
+      cantidadTarjetas(participante, colorEnPlural) {
+        return participante.tarjetas ? (participante.tarjetas[colorEnPlural] ? participante.tarjetas[colorEnPlural] : 0) : 0
+      },
       tarjetasParticipante(participante) {
-        return this.coloresTarjetas.reduce((p, c) => p + participante.tarjetas[c], 0)
+        return this.coloresTarjetas.reduce((p, c) => p + this.cantidadTarjetas(participante, c), 0)
       },
       tarjetasTotales(color) {
-        return this.participantes.reduce((p, c) => p + c.tarjetas[color], 0) 
+        return this.participantes.reduce((p, c) => p + this.cantidadTarjetas(c, color), 0) 
       }
     },
     // created() {
@@ -53,7 +62,7 @@ export default {
     <h2>Resultados por participantes</h2>
     <div v-if="participantes" v-for="participante of participantes">
       <Participante :participante="participante"
-                    @addGol="participante.goles++"
+                    @addGol="participante.goles ? participante.goles++ : participante.goles = 1"
                     @addTarjeta="addTarjeta($event, participante)"/>
       <div v-if="participante.goles">Goles <font-awesome-icon icon="fa-solid fa-futbol" v-for="g in participante.goles" class="me-2"/></div>
       <div v-else>No tienes goles</div>
