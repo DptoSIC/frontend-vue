@@ -2,9 +2,13 @@
 import { mapActions } from 'pinia'
 import { participantesStore } from '@/stores/participantes'
 import { dateToString } from '@/utils/utils'
+import Apuestas from '@/components/apuestas/Apuestas.vue'
+import Apostado from '@/components/apuestas/Apostado.vue'
 
 export default {
   props: [ 'partido' ],
+  components: { Apuestas, Apostado },
+  emits: [ 'establecerApuesta'],
   computed: {
     local() {
       return this.getParticipantePorId(this.partido.idLocal)
@@ -40,5 +44,11 @@ export default {
     <span class="fs-3 me-2">{{ local.nombre }}</span>
     <span class="fs-3 me-2">{{ golesLocal }} - {{ golesVisitante }}</span>
     <span class="fs-3 me-2">{{ visitante.nombre }}</span>
+
+    <Apuestas v-if="!partido.apostado" :partido="partido"
+              @establecerApuesta="$emit('establecerApuesta', $event)"></Apuestas>
+    <div v-else>Apostado {{partido.apostado.cantidad }}€ por {{ partido.apostado.mercado }} 
+                en {{ partido.idLocal }} vs {{ partido.idVisitante }} 
+                con cuota {{ partido.apostado.cuotaString }}</div>
   </div>
 </template>
