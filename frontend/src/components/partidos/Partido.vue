@@ -45,10 +45,14 @@ export default {
     <span class="fs-3 me-2">{{ golesLocal }} - {{ golesVisitante }}</span>
     <span class="fs-3 me-2">{{ visitante.nombre }}</span>
 
-    <Apuestas v-if="!partido.apostado" :partido="partido"
+    <component  :is="partido.apostado ? 'Apostado' : 'Apuestas'"
+                :partido="partido"
+                @establecerApuesta="$emit('establecerApuesta', $event)"></component>
+
+    <!-- <Apuestas v-if="!partido.apostado" :partido="partido"
               @establecerApuesta="$emit('establecerApuesta', $event)"></Apuestas>
     <div v-else>Apostado {{partido.apostado.cantidad }}€ por {{ partido.apostado.mercado }} 
                 en {{ partido.idLocal }} vs {{ partido.idVisitante }} 
-                con cuota {{ partido.apostado.cuotaString }}</div>
+                con cuota {{ partido.apostado.cuotaString }}</div> -->
   </div>
 </template>
