@@ -5,7 +5,7 @@ import Home from '@/components/practica-componentes/PracticaComponentes.vue'
 import ListadoPartidos from '@/components/partidos/ListadoPartidos.vue'
 import About from '@/components/practica-rounting/About.vue'
 import NestedRoute from '@/components/practica-rounting/NestedRoute.vue'
-import ParticipanteInfo from '@/components/practica-rounting/ParticipanteInfo.vue'
+// import ParticipanteInfo from '@/components/practica-rounting/ParticipanteInfo.vue'
 import NotFound from '@/components/practica-rounting/NotFound.vue'
 
 import { createRouter, createWebHashHistory } from 'vue-router'
@@ -28,6 +28,8 @@ import { faFutbol, faSquareFull } from '@fortawesome/free-solid-svg-icons'
 library.add(faFutbol, faSquareFull)
 
 const pinia = createPinia()
+
+const ParticipanteInfo = () => import('@/components/practica-rounting/ParticipanteInfo.vue')
 
 const routes = [
   { path: '/', component: Home, name: 'home' },
