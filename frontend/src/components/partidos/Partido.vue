@@ -32,6 +32,8 @@ export default {
   methods: {
     ...mapActions(participantesStore, [ 'getParticipantePorId' ]),
     golesParticipante(participante) {
+      if (!this.goles) return 0
+      
       return this.goles.filter(g => g.idParticipante == participante.id).length
     }
   }

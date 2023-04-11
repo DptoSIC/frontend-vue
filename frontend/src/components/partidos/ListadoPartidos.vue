@@ -1,5 +1,5 @@
 <script>
-import { mapState } from 'pinia'
+import { mapState, mapActions } from 'pinia'
 import { partidosStore } from '@/stores/partidos'
 import Partido from './Partido.vue'
 import { Modal } from '~bootstrap'
@@ -16,6 +16,7 @@ export default {
     ...mapState(partidosStore, [ 'partidos' ])
   },
   methods: {
+    ...mapActions(partidosStore, [ 'getPartidos' ]),
     async apuestaPor(apuesta) {
       this.apuesta = apuesta
       await nextTick()
@@ -27,6 +28,9 @@ export default {
       this.apuesta = undefined
     }
   },
+  created() {
+    this.getPartidos()
+  }
 }
 </script>
 

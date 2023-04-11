@@ -13,6 +13,9 @@ export const participantesStore = defineStore('participantes', {
     participantes: participantes
   }),
   actions: {
+    // async getParticipantes() {
+    //   await getParticipantes().then(r => this.participantes = r.data._embedded.participantes)
+    // },
     getParticipantePorId(id) {
       return this.participantes.find(p => p.id == id)
     }
