@@ -1,6 +1,8 @@
 <script setup>
 import { storeToRefs } from 'pinia'
 import { authStore } from '@/stores/auth'
+import { onMounted } from 'vue'
+import { participantesStore } from '@/stores/participantes'
 
 const auth = authStore()
 const { tipoUsuario } = storeToRefs(auth)
@@ -26,6 +28,10 @@ const { cambiarNivel } = auth
     }
   }
 */
+
+onMounted(async () => {
+  await participantesStore().getParticipantes()
+})
 </script>
 
 <template>
