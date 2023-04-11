@@ -41,6 +41,14 @@ const router = createRouter({
   routes
 })
 
+import { authStore } from '@/stores/auth'
+router.beforeEach(async (to, from) => {
+  const auth = authStore()
+  if (!auth.esAdmin && to.name !== 'about') {
+    return { name: 'about' }
+  }
+})
+
 const app = createApp(App)
 
 app.use(pinia)
