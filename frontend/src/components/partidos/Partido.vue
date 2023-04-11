@@ -41,20 +41,22 @@ export default {
 </script>
 
 <template>
-  <div>
-    <div>{{ fecha }}</div>
-    <span class="fs-3 me-2">{{ local.nombre }}</span>
-    <span class="fs-3 me-2">{{ golesLocal }} - {{ golesVisitante }}</span>
-    <span class="fs-3 me-2">{{ visitante.nombre }}</span>
-
-    <component  :is="partido.apostado ? 'Apostado' : 'Apuestas'"
-                :partido="partido"
-                @establecerApuesta="$emit('establecerApuesta', $event)"></component>
-
-    <!-- <Apuestas v-if="!partido.apostado" :partido="partido"
-              @establecerApuesta="$emit('establecerApuesta', $event)"></Apuestas>
-    <div v-else>Apostado {{partido.apostado.cantidad }}€ por {{ partido.apostado.mercado }} 
-                en {{ partido.idLocal }} vs {{ partido.idVisitante }} 
-                con cuota {{ partido.apostado.cuotaString }}</div> -->
+  <div class="border rounded p-2 mb-2">
+    <div class="d-md-flex d-inline justify-content-between">
+      <div>
+        <div class="text-muted">{{ fecha }}</div>
+        <span class="fs-3 me-2">{{ local.nombre }}</span>
+        <span class="fs-3 me-2">{{ golesLocal }} - {{ golesVisitante }}</span>
+        <span class="fs-3 me-2">{{ visitante.nombre }}</span>
+      </div>
+      <div class="flex-column my-auto">
+        <component  :is="partido.apostado ? 'Apostado' : 'Apuestas'"
+                    :partido="partido"
+                    :apostado="partido.apostado"
+                    @establecerApuesta="$emit('establecerApuesta', $event)"
+                    class="align-middle">
+        </component>
+      </div>
+    </div>
   </div>
 </template>

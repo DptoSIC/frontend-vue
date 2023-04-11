@@ -1,13 +1,11 @@
 <script>
 export default {
-  props: [ 'partido' ]
+  props: [ 'apostado' ]
 }
 </script>
 
 <template>
-  <div>
-    Apostado {{ partido.apostado.cantidad }}€ por {{ partido.apostado.mercado }} 
-    en {{ partido.idLocal }} vs {{ partido.idVisitante }} 
-    con cuota {{ partido.apostado.cuotaString }}
-  </div>
+  <span class="fs-5 text-success fst-italic">
+    Apostado {{ apostado.cantidad }}€ a {{ apostado.mercado }} con cuota {{ apostado.cuotaString }} en {{ apostado.casa }}
+  </span>
 </template>

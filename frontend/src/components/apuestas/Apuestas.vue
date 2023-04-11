@@ -1,6 +1,6 @@
 <script>
 import { apuestasStore } from '@/stores/apuestas.js'
-import { mapActions } from 'pinia';
+import { mapActions } from 'pinia'
 
 export default {
   props: [ 'partido' ],
@@ -24,10 +24,11 @@ export default {
 </script>
 
 <template>
-  <div>
-    <button v-for="apuesta of getApuestas(partido)" type="button" class="btn btn-primary me-2" :class="apuesta.color"
-      @click="$emit('establecerApuesta', { ...apuesta, cantidad: 100 })">
-      {{ apuesta.casa }} <span class="badge text-bg-secondary">{{ apuesta.cuotaString }}</span>
+  <div class="text-md-end">
+    <button v-for="apuesta of getApuestas(partido)" type="button"
+            class="btn me-2 mb-2 p-md-2 p-1" :class="apuesta.color"
+            @click="$emit('establecerApuesta', { ...apuesta, cantidad: 100 })">
+              {{ apuesta.casa }} <span class="badge text-bg-secondary">{{ apuesta.cuotaString }}</span>
     </button>
   </div>
 </template>

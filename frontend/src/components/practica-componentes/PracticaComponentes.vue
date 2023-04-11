@@ -1,18 +1,15 @@
 <script>
 import Participante from './Participante.vue'
-// import participantesJson from '@/assets/participantes.json'
 import { mapState } from 'pinia'
 import { participantesStore } from '@/stores/participantes'
 
 export default {
     components: { Participante },
-    data() {
-        return {
-          // participantes: participantesJson._embedded.participantes
-        }
-    },
     computed: {
-      ...mapState(participantesStore, [ 'participantes' ]),
+      ...mapState(participantesStore, { todosLosParticipantes: 'participantes' }),
+      participantes() {
+        return this.todosLosParticipantes.slice(0, 20)
+      },
       coloresTarjetas() {
         return [ 'amarillas', 'rojas' ]
       },
@@ -39,13 +36,7 @@ export default {
       tarjetasTotales(color) {
         return this.participantes.reduce((p, c) => p + this.cantidadTarjetas(c, color), 0) 
       }
-    },
-    // created() {
-    //   this.participantes.forEach(p => {
-    //                                     if (!p.goles) p.goles = 0
-    //                                     if (!p.tarjetas) p.tarjetas = { amarillas: 0, rojas: 0 }
-    //                                   })
-    // }
+    }
 }
 </script>
 

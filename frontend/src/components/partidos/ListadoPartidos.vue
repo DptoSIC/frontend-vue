@@ -50,11 +50,17 @@ export default {
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="mb-3">
-              Apostar por {{ apuesta.mercado }} en {{ apuesta.evento.idLocal }} vs {{ apuesta.evento.idVisitante }} con cuota {{ apuesta.cuotaString }}
-              <label for="cantidad" class="form-label">Cantidad</label>
-              <input type="number" class="form-control" id="cantidad" v-model="apuesta.cantidad">
+            <div v-if="apuesta" class="mb-3">
+              <p>
+                <span class="fw-bold">Casa:</span> {{ apuesta.casa }}<br>
+                <span class="fw-bold">Mercado:</span> {{ apuesta.mercado }}<br>
+                <span class="fw-bold">Partido:</span> {{ apuesta.evento.idLocal }} vs {{ apuesta.evento.idVisitante }}<br>
+                <span class="fw-bold">Cuota:</span> {{ apuesta.cuotaString }}
+              </p>
+              <label for="exampleFormControlInput1" class="form-label">Cantidad (€):</label>
+              <input type="number" class="form-control w-90" id="exampleFormControlInput1" v-model="apuesta.cantidad">
             </div>
+            <div v-show="!apuesta">No hay apuesta seleccionada.</div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
