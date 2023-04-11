@@ -1,5 +1,6 @@
 <script>
-import { mapActions } from 'pinia'
+import { mapActions, mapState } from 'pinia'
+import { authStore } from '@/stores/auth'
 import { participantesStore } from '@/stores/participantes'
 import { dateToString } from '@/utils/utils'
 import Apuestas from '@/components/apuestas/Apuestas.vue'
@@ -10,6 +11,7 @@ export default {
   components: { Apuestas, Apostado },
   emits: [ 'establecerApuesta'],
   computed: {
+    ...mapState(authStore, [ 'esAdmin']),
     local() {
       return this.getParticipantePorId(this.partido.idLocal)
     },
@@ -49,7 +51,7 @@ export default {
         <span class="fs-3 me-2">{{ golesLocal }} - {{ golesVisitante }}</span>
         <span class="fs-3 me-2">{{ visitante.nombre }}</span>
       </div>
-      <div class="flex-column my-auto">
+      <div v-if="esAdmin" class="flex-column my-auto">
         <component  :is="partido.apostado ? 'Apostado' : 'Apuestas'"
                     :partido="partido"
                     :apostado="partido.apostado"
