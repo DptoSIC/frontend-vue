@@ -22,6 +22,10 @@ export function guardarPartido(partido) {
   return llamadaApi(`${host}/partidos`, 'post', partido)
 }
 
+export function borrarEntidad(entidad) {
+  return llamadaApi(entidad._links.self.href.replace('http', 'https'), 'delete')
+}
+
 export function getEntidades(nombre) {
   return llamadaApi(`${host}/${nombre}`)
 }

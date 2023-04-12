@@ -6,7 +6,7 @@ import Partido from './Partido.vue'
 import { Modal } from '~bootstrap'
 import { nextTick } from 'vue'
 import FormularioPartido from './FormularioPartido.vue'
-import { guardarPartido } from '@/stores/api-service'
+import { guardarPartido, borrarEntidad } from '@/stores/api-service'
 
 export default {
   components: { Partido, FormularioPartido },
@@ -38,6 +38,13 @@ export default {
                                             this.partidos.unshift(r.data)
                                           }
                                         })
+    },
+    borrarPartido(partido) {
+      borrarEntidad(partido).then(r => {
+                                          if (r.status == 204) {
+                                            this.partidos.splice(this.partidos.indexOf(partido), 1)
+                                          }
+                                        })
     }
   },
   created() {
@@ -55,7 +62,8 @@ export default {
 
       <Partido v-for="partido of partidos" :partido="partido"
               class="border rounded p-2 mb-2"
-              @establecerApuesta="apuestaPor"></Partido>
+              @establecerApuesta="apuestaPor"
+              @borrarPartido="borrarPartido"></Partido>
     </div>
     <div v-else>Cargando datos...</div>
 
