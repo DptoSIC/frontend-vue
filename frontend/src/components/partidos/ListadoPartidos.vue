@@ -5,9 +5,11 @@ import { participantesStore } from '@/stores/participantes'
 import Partido from './Partido.vue'
 import { Modal } from '~bootstrap'
 import { nextTick } from 'vue'
+import FormularioPartido from './FormularioPartido.vue'
+import { guardarPartido } from '@/stores/api-service'
 
 export default {
-  components: { Partido },
+  components: { Partido, FormularioPartido },
   data() {
     return {
       apuesta: undefined
@@ -28,6 +30,14 @@ export default {
       const { casa, cantidad, cuota, cuotaString, mercado } = apuesta
       apuesta.evento.apostado = { casa, cantidad, cuota, cuotaString, mercado }
       this.apuesta = undefined
+    },
+    guardarPartido(partido) {
+      guardarPartido(partido).then(r => {
+                                          if (r.status == 201) {
+                                            r.data.sucesos = []
+                                            this.partidos.unshift(r.data)
+                                          }
+                                        })
     }
   },
   created() {
@@ -41,6 +51,8 @@ export default {
     <h2>Partidos para apostar por EMPATES</h2>
 
     <div v-if="participantes.length">
+      <FormularioPartido class="border rounded p-2 mb-2" @guardarPartido="guardarPartido"></FormularioPartido>
+
       <Partido v-for="partido of partidos" :partido="partido"
               class="border rounded p-2 mb-2"
               @establecerApuesta="apuestaPor"></Partido>

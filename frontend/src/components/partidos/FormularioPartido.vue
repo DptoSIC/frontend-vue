@@ -19,6 +19,7 @@ function prePartido(participantes) {
 
 export default {
   components: { Calendar },
+  emits: [ 'guardarPartido'],
   data() {
     return {
       partido: undefined
@@ -79,6 +80,8 @@ export default {
         <span class="fs-3 me-2"> vs </span>
         <span class="fs-3 me-2">{{ visitante.nombre }}</span>
       </div>
+
+      <button type="button" class="btn btn-success" @click="$emit('guardarPartido', partido)">Guardar</button>
     </div>
   </div>
 </template>

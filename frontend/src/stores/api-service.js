@@ -18,6 +18,10 @@ export function llamadaApi(path, method, body) {
   return axios.request(config)
 }
 
+export function guardarPartido(partido) {
+  return llamadaApi(`${host}/partidos`, 'post', partido)
+}
+
 export function getEntidades(nombre) {
   return llamadaApi(`${host}/${nombre}`)
 }
