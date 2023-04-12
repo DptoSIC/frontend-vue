@@ -12,6 +12,11 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 import { createPinia } from 'pinia'
 
+import 'primevue/resources/themes/saga-blue/theme.css'  //theme
+import 'primevue/resources/primevue.min.css'            //core css
+import 'primeicons/primeicons.css'                      //icons
+import PrimeVue from 'primevue/config'
+
 // Import our custom CSS
 import './scss/styles.scss'
 // Import all of Bootstrap's JS
@@ -66,6 +71,8 @@ const app = createApp(App)
 app.use(pinia)
 
 app.use(router)
+
+app.use(PrimeVue)
 
 /* add font awesome icon component */
 app.component('font-awesome-icon', FontAwesomeIcon)

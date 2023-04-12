@@ -16,6 +16,8 @@
     "axios": "^1.3.4",
     "bootstrap": "^5.2.3",
     "pinia": "^2.0.33",
+    "primeicons": "^6.0.1",
+    "primevue": "^3.26.1",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
