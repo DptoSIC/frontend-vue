@@ -1,6 +1,7 @@
 <script>
 import { mapState, mapActions } from 'pinia'
 import { partidosStore } from '@/stores/partidos'
+import { participantesStore } from '@/stores/participantes'
 import Partido from './Partido.vue'
 import { Modal } from '~bootstrap'
 import { nextTick } from 'vue'
@@ -13,7 +14,8 @@ export default {
     }
   },
   computed: {
-    ...mapState(partidosStore, [ 'partidos' ])
+    ...mapState(partidosStore, [ 'partidos' ]),
+    ...mapState(participantesStore, [ 'participantes' ])
   },
   methods: {
     ...mapActions(partidosStore, [ 'getPartidos' ]),
@@ -37,9 +39,13 @@ export default {
 <template>
   <div>
     <h2>Partidos para apostar por EMPATES</h2>
-    <Partido v-for="partido of partidos" :partido="partido"
-             class="border rounded p-2 mb-2"
-             @establecerApuesta="apuestaPor"></Partido>
+
+    <div v-if="participantes.length">
+      <Partido v-for="partido of partidos" :partido="partido"
+              class="border rounded p-2 mb-2"
+              @establecerApuesta="apuestaPor"></Partido>
+    </div>
+    <div v-else>Cargando datos...</div>
 
     <!-- Modal -->
     <div v-if="apuesta" class="modal fade" id="apuesta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

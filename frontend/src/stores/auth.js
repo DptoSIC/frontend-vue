@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 
 export const authStore = defineStore('autenticacion', () => {
-  const tipoUsuario = ref('basico')
+  const tipoUsuario = ref('admin')
 
   const esAdmin = computed(() => tipoUsuario.value == 'admin')
 
