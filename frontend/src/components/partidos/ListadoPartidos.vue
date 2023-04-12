@@ -58,7 +58,7 @@ export default {
     <h2>Partidos para apostar por EMPATES</h2>
 
     <div v-if="participantes.length">
-      <FormularioPartido class="border rounded p-2 mb-2" @guardarPartido="guardarPartido"></FormularioPartido>
+      <FormularioPartido class="border rounded p-2 mb-2" @guardarPartido="guardarPartido" :partidos="partidos"></FormularioPartido>
 
       <Partido v-for="partido of partidos" :partido="partido"
               class="border rounded p-2 mb-2"

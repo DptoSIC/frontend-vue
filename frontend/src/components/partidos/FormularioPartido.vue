@@ -18,6 +18,7 @@ function prePartido(participantes) {
 }
 
 export default {
+  props: [ 'partidos' ],
   components: { Calendar },
   emits: [ 'guardarPartido'],
   data() {
@@ -42,6 +43,14 @@ export default {
   },
   methods: {
     ...mapActions(participantesStore, [ 'getParticipantePorId' ]),
+    partidosEnElDia(date) {
+      const { day, month, year } = date
+
+      return this.partidos.filter(p => {
+                                          const fecha = new Date(p.timestamp)
+                                          return fecha.getDate() == day && fecha.getMonth() == month && fecha.getFullYear() == year
+                                        }).length
+    }
   },
   watch: {
     'partido.fecha'(nueva) {
@@ -60,6 +69,13 @@ export default {
     <div>
       <div>
         <Calendar v-model="partido.fecha" dateFormat="dd MM yy" class="mb-3">
+          <template #date="slotProps">
+            <div :class="{ 'dia-con-partido': partidosEnElDia(slotProps.date) > 0 }" class="text-center">
+              <div v-if="partidosEnElDia(slotProps.date)" class="numero-partidos">{{ partidosEnElDia(slotProps.date) }}
+              </div>
+              <div>{{ slotProps.date.day }}</div>
+            </div>
+          </template>
         </Calendar>
         
         <div class="input-group mb-3">
@@ -85,3 +101,20 @@ export default {
     </div>
   </div>
 </template>
+
+<style scoped>
+.dia-con-partido {
+  background-color: crimson;
+  color: var(--bs-white);
+  font-weight: bolder;
+  height: 100%;
+  width: 100%;
+}
+
+.numero-partidos {
+  font-size: 0.6rem;
+  background-color: var(--bs-white);
+  color: crimson;
+  border-radius: 50%;
+}
+</style>
