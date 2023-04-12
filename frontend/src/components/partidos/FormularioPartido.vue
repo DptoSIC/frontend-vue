@@ -42,6 +42,11 @@ export default {
   methods: {
     ...mapActions(participantesStore, [ 'getParticipantePorId' ]),
   },
+  watch: {
+    'partido.fecha'(nueva) {
+      this.partido.timestamp = nueva.getTime()
+    }
+  },
   created() {
     this.partido = this.partidoEditar ?? prePartido(this.participantes)
     this.partido.fecha = new Date(this.partido.timestamp)
@@ -74,6 +79,6 @@ export default {
         <span class="fs-3 me-2"> vs </span>
         <span class="fs-3 me-2">{{ visitante.nombre }}</span>
       </div>
-     </div>
+    </div>
   </div>
 </template>
