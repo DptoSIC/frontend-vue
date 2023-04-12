@@ -1,18 +1,25 @@
 import axios from 'axios'
 
-export function llamadaApi(path) {
+const host = 'https://pruebaapi1-lonchezas.b4a.run/api'
+
+export function llamadaApi(path, method, body) {
   let config = {
-    method: 'get',
+    method: method ?? 'get',
     maxBodyLength: Infinity,
     url: path,
     headers: {}
+  }
+
+  if (body) {
+    config.data = body,
+    config.headers['Content-Type'] = 'application/json'
   }
 
   return axios.request(config)
 }
 
 export function getEntidades(nombre) {
-  return llamadaApi(`https://pruebaapi1-lonchezas.b4a.run/api/${nombre}`)
+  return llamadaApi(`${host}/${nombre}`)
 }
 
 export function getParticipantes() {
