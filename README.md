@@ -108,3 +108,24 @@ Para seguir usando los imports, en vez de utilizar `Vue` o `VueRouter`, importar
 ```js
 import { createRouter, createWebHashHistory } from 'vue-router'
 ```
+
+## Añadir PrimeVue
+
+Para añadir la dependencia se puede hacer por npm como el resto:
+
+```bash
+npm install primevue primeicons
+```
+
+Después se añaden los estilos, tema, iconos y el plugin de PrimeVue a la aplicación:
+```js
+import 'primevue/resources/themes/saga-blue/theme.css'  //theme
+import 'primevue/resources/primevue.min.css'            //core css
+import 'primeicons/primeicons.css'                      //icons
+import PrimeVue from 'primevue/config'
+
+const app = createApp(App)
+app.use(PrimeVue)
+```
+
+Tiene bastante documentación sobre como usar sus componentes. Nosotros vamos a usar el componente [Calendar](https://primevue.org/calendar/).
