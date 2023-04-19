@@ -80,6 +80,7 @@ export default {
                          @guardarPartido="guardarPartido"></FormularioPartido>
 
       <Partido v-for="partido of partidos" :partido="partido"
+              :key="`${partido.idLocal}|${partido.idVisitante}|${partido.timestamp}`"
               class="border rounded p-2 mb-2"
               @establecerApuesta="apuestaPor"
               @borrarPartido="borrarPartido"
