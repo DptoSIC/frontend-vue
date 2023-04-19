@@ -30,8 +30,27 @@ export function guardarPartido(partido) {
   return llamadaApi(`${host}/partidos`, 'post', partido)
 }
 
+// Ver patch usando json para Spring: https://www.baeldung.com/spring-rest-json-patch
 export function actualizarPartido(partido) {
-  return llamadaApi(partido._links.self.href.replace('http', 'https'), 'put', partido)
+  const parche = []
+  const camposActualizables = [ 'timestamp' ]
+  for (const campo in partido) {
+    if (camposActualizables.includes(campo)) {
+      parche.push({
+        op: 'replace',
+        path: `/${campo}`,
+        value: partido[campo]
+      })
+    }
+  }
+
+  const config = configuracionPorDefecto(partido._links.self.href.replace('http', 'https'), 'patch', parche)
+
+  config.headers['Content-Type'] = 'application/json-patch+json'
+
+  return llamadaApiConConfiguracion(config)
+
+  // return llamadaApi(partido._links.self.href.replace('http', 'https'), 'put', partido)
 }
 
 export function borrarEntidad(entidad) {

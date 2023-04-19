@@ -40,6 +40,9 @@ export default {
     },
     participantesVisitante() {
       return this.participantes.filter(p => p.id != this.local.id)
+    },
+    esEdicion() {
+      return this.partidoEditar != undefined
     }
   },
   methods: {
@@ -89,14 +92,14 @@ export default {
         
         <div class="input-group mb-3">
           <span class="input-group-text" id="local">Local</span>
-          <select class="form-select" v-model="partido.idLocal">
+          <select class="form-select" v-model="partido.idLocal" :disabled="esEdicion">
             <option v-for="participante of participantesLocal" :value="participante.id">{{ participante.nombre }}</option>
           </select>
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="visitante">Visitante</span>
-          <select class="form-select" v-model="partido.idVisitante">
+          <select class="form-select" v-model="partido.idVisitante" :disabled="esEdicion">
             <option v-for="participante of participantesVisitante" :value="participante.id">{{ participante.nombre }}</option>
           </select>
         </div>
@@ -106,7 +109,9 @@ export default {
         <span class="fs-3 me-2">{{ visitante.nombre }}</span>
       </div>
 
-      <button type="button" class="btn btn-success" @click="$emit('guardarPartido', partido)">Guardar</button>
+      <button type="button" class="btn btn-success" @click="$emit('guardarPartido', partido)">
+        {{ esEdicion ? 'Actualizar' : 'Guardar' }}
+      </button>
     </div>
   </div>
 </template>
