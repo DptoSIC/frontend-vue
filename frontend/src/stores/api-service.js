@@ -3,6 +3,14 @@ import axios from 'axios'
 const host = 'https://pruebaapi1-lonchezas.b4a.run/api'
 
 export function llamadaApi(path, method, body) {
+  return llamadaApiConConfiguracion(configuracionPorDefecto(path, method, body))
+}
+
+function llamadaApiConConfiguracion(config) {
+  return axios.request(config)
+}
+
+function configuracionPorDefecto(path, method, body) {
   let config = {
     method: method ?? 'get',
     maxBodyLength: Infinity,
@@ -15,7 +23,7 @@ export function llamadaApi(path, method, body) {
     config.headers['Content-Type'] = 'application/json'
   }
 
-  return axios.request(config)
+  return config
 }
 
 export function guardarPartido(partido) {
