@@ -9,7 +9,7 @@ import Apostado from '@/components/apuestas/Apostado.vue'
 export default {
   props: [ 'partido' ],
   components: { Apuestas, Apostado },
-  emits: [ 'establecerApuesta', 'borrarPartido'],
+  emits: [ 'establecerApuesta', 'borrarPartido', 'editarPartido' ],
   computed: {
     ...mapState(authStore, [ 'esAdmin']),
     local() {
@@ -46,7 +46,11 @@ export default {
   <div class="border rounded p-2 mb-2">
     <div class="d-md-flex d-inline justify-content-between">
       <div>
-        <div class="text-muted"><span class="badge bg-danger me-2" @click="$emit('borrarPartido', partido)">borrar</span>{{ fecha }}</div>
+        <div class="text-muted">
+          <span class="badge bg-danger me-2" @click="$emit('borrarPartido', partido)">borrar</span>
+          <span class="badge bg-primary me-2" @click="$emit('editarPartido', partido)">editar</span>
+          {{ fecha }}
+        </div>
         <span class="fs-3 me-2">{{ local.nombre }}</span>
         <span class="fs-3 me-2">{{ golesLocal }} - {{ golesVisitante }}</span>
         <span class="fs-3 me-2">{{ visitante.nombre }}</span>

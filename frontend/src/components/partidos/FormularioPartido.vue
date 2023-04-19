@@ -2,6 +2,7 @@
 import { mapActions, mapState } from 'pinia'
 import { participantesStore } from '@/stores/participantes'
 import Calendar from 'primevue/calendar'
+import { clonarObjeto } from '@/utils/utils'
 
 function participanteRandom(participantes) {
   return participantes[Math.floor(Math.random() * participantes.length)]
@@ -18,7 +19,7 @@ function prePartido(participantes) {
 }
 
 export default {
-  props: [ 'partidos' ],
+  props: [ 'partidos', 'partidoEditar' ],
   components: { Calendar },
   emits: [ 'guardarPartido'],
   data() {
@@ -53,6 +54,14 @@ export default {
     }
   },
   watch: {
+    partidoEditar(nuevo) {
+      if (nuevo) {
+        this.partido = clonarObjeto(nuevo)
+      } else {
+        this.partido = prePartido(this.participantes)
+      }
+      this.partido.fecha = new Date(this.partido.timestamp)
+    },
     'partido.fecha'(nueva) {
       this.partido.timestamp = nueva.getTime()
     }

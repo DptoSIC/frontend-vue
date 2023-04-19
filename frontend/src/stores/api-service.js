@@ -22,6 +22,10 @@ export function guardarPartido(partido) {
   return llamadaApi(`${host}/partidos`, 'post', partido)
 }
 
+export function actualizarPartido(partido) {
+  return llamadaApi(partido._links.self.href.replace('http', 'https'), 'put', partido)
+}
+
 export function borrarEntidad(entidad) {
   return llamadaApi(entidad._links.self.href.replace('http', 'https'), 'delete')
 }

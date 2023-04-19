@@ -6,13 +6,14 @@ import Partido from './Partido.vue'
 import { Modal } from '~bootstrap'
 import { nextTick } from 'vue'
 import FormularioPartido from './FormularioPartido.vue'
-import { guardarPartido, borrarEntidad } from '@/stores/api-service'
+import { guardarPartido, borrarEntidad, actualizarPartido } from '@/stores/api-service'
 
 export default {
   components: { Partido, FormularioPartido },
   data() {
     return {
-      apuesta: undefined
+      apuesta: undefined,
+      partidoEditar: undefined
     }
   },
   computed: {
@@ -32,12 +33,24 @@ export default {
       this.apuesta = undefined
     },
     guardarPartido(partido) {
-      guardarPartido(partido).then(r => {
-                                          if (r.status == 201) {
-                                            r.data.sucesos = []
-                                            this.partidos.unshift(r.data)
-                                          }
-                                        })
+      if (this.partidoEditar) {
+        console.log('Actualizando partido', partido)
+        actualizarPartido(partido).then(r => {
+                                                console.log(r)
+                                                if (r.status == 200) {
+                                                  r.data.sucesos = []
+                                                  this.partidos.splice(this.partidos.indexOf(this.partidoEditar), 1, r.data)
+                                                  this.partidoEditar = undefined
+                                                }
+                                              })
+      } else {
+        guardarPartido(partido).then(r => {
+                                            if (r.status == 201) {
+                                              r.data.sucesos = []
+                                              this.partidos.unshift(r.data)
+                                            }
+                                          })
+      }
     },
     borrarPartido(partido) {
       borrarEntidad(partido).then(r => {
@@ -45,6 +58,9 @@ export default {
                                             this.partidos.splice(this.partidos.indexOf(partido), 1)
                                           }
                                         })
+    },
+    editarPartido(partido) {
+      this.partidoEditar = partido
     }
   },
   created() {
@@ -58,12 +74,16 @@ export default {
     <h2>Partidos para apostar por EMPATES</h2>
 
     <div v-if="participantes.length">
-      <FormularioPartido class="border rounded p-2 mb-2" @guardarPartido="guardarPartido" :partidos="partidos"></FormularioPartido>
+      <FormularioPartido class="border rounded p-2 mb-2"
+                         :partidos="partidos"
+                         :partidoEditar="partidoEditar"
+                         @guardarPartido="guardarPartido"></FormularioPartido>
 
       <Partido v-for="partido of partidos" :partido="partido"
               class="border rounded p-2 mb-2"
               @establecerApuesta="apuestaPor"
-              @borrarPartido="borrarPartido"></Partido>
+              @borrarPartido="borrarPartido"
+              @editarPartido="editarPartido"></Partido>
     </div>
     <div v-else>Cargando datos...</div>
 
