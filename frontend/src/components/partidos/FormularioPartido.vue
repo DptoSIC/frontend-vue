@@ -36,9 +36,13 @@ export default {
       return this.getParticipantePorId(this.partido.idVisitante)
     },
     participantesLocal() {
+      if (!this.visitante) return this.participantes
+
       return this.participantes.filter(p => p.id != this.visitante.id)
     },
     participantesVisitante() {
+      if (!this.local) return this.participantes
+
       return this.participantes.filter(p => p.id != this.local.id)
     },
     esEdicion() {
@@ -104,9 +108,12 @@ export default {
           </select>
         </div>
 
-        <span class="fs-3 me-2">{{ local.nombre }}</span>
-        <span class="fs-3 me-2"> vs </span>
-        <span class="fs-3 me-2">{{ visitante.nombre }}</span>
+        <div v-if="local && visitante">
+          <span class="fs-3 me-2">{{ local.nombre }}</span>
+          <span class="fs-3 me-2"> vs </span>
+          <span class="fs-3 me-2">{{ visitante.nombre }}</span>
+        </div>
+        <div v-else>Elige a los participantes</div>
       </div>
 
       <button type="button" class="btn btn-success" @click="$emit('guardarPartido', partido)">

@@ -42,10 +42,11 @@ onMounted(async () => {
     <div class="mb-3">
       <router-link :to="{ name: 'home' }" :class="$route.name == 'home' ? 'text-white bg-success' : ''" class="text-decoration-none p-2 me-2">Home</router-link>
       <router-link :to="{ name: 'partidos' }" :class="$route.name == 'partidos' ? 'text-white bg-success' : ''" class="text-decoration-none p-2 me-2">Partidos</router-link>
+      <router-link :to="{ name: 'partidos-simple' }" :class="$route.name == 'partidos-simple' ? 'text-white bg-success' : ''" class="text-decoration-none p-2 me-2">Partidos Simple</router-link>
       <router-link :to="{ name: 'about' }" :class="$route.name == 'about' ? 'text-white bg-success' : ''" class="text-decoration-none p-2 me-2">About</router-link>
       <router-link :to="{ name: 'nested-about' }" :class="($route.name && $route.name.startsWith('nested')) ? 'text-white bg-success' : ''" class="text-decoration-none p-2 me-2">Nested</router-link>
     </div>
-
+    
     <router-view></router-view>
   </div>
 </template>

@@ -3,6 +3,7 @@ import './style.css'
 import App from './App.vue'
 import Home from '@/components/practica-componentes/PracticaComponentes.vue'
 import ListadoPartidos from '@/components/partidos/ListadoPartidos.vue'
+import ListadoPartidosSimple from '@/components/partidos/ListadoPartidosSimple.vue'
 import About from '@/components/practica-rounting/About.vue'
 import NestedRoute from '@/components/practica-rounting/NestedRoute.vue'
 // import ParticipanteInfo from '@/components/practica-rounting/ParticipanteInfo.vue'
@@ -28,9 +29,9 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { faFutbol, faSquareFull } from '@fortawesome/free-solid-svg-icons'
+import { faFutbol, faSquareFull, faPen, faTrash, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 /* add icons to the library */
-library.add(faFutbol, faSquareFull)
+library.add(faFutbol, faSquareFull, faPen, faTrash, faPlusCircle)
 
 const pinia = createPinia()
 
@@ -39,6 +40,7 @@ const ParticipanteInfo = () => import('@/components/practica-rounting/Participan
 const routes = [
   { path: '/', component: Home, name: 'home' },
   { path: '/partidos', component: ListadoPartidos, name: 'partidos' },
+  { path: '/partidos-simple', component: ListadoPartidosSimple, name: 'partidos-simple' },
   { path: '/about', component: About, name: 'about' },
   { path: '/participante/:identificador', component: ParticipanteInfo, name: 'participante' },
   {
