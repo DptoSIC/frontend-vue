@@ -36,9 +36,7 @@ export default {
       if (this.partidoEditar) {
         console.log('Actualizando partido', partido)
         actualizarPartido(partido).then(r => {
-                                                console.log(r)
                                                 if (r.status == 200) {
-                                                  r.data.sucesos = []
                                                   this.partidos.splice(this.partidos.indexOf(this.partidoEditar), 1, r.data)
                                                   this.partidoEditar = undefined
                                                 }
@@ -46,7 +44,6 @@ export default {
       } else {
         guardarPartido(partido).then(r => {
                                             if (r.status == 201) {
-                                              r.data.sucesos = []
                                               this.partidos.unshift(r.data)
                                             }
                                           })
