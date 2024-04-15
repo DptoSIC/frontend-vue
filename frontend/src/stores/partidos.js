@@ -13,7 +13,7 @@ export const partidosStore = defineStore('partidos', {
       this.partidos = (await getEntidades('partidos?sort=id,desc')).data._embedded.partidos
       this.partidos.forEach(p => {
                                     p.sucesos = []
-                                    llamadaApi(p._links.sucesos.href.replace('http', 'https')).then(r => p.sucesos = r.data._embedded)
+                                    llamadaApi(p._links.sucesos.href.replace('http:', 'https:')).then(r => p.sucesos = r.data._embedded)
                                   })
     }
   }

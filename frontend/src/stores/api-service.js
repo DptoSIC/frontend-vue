@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-const host = 'https://pruebaapi1-lonchezas.b4a.run/api'
+const host = 'https://datos-deportivos-0cca96f5f686.herokuapp.com/api'
 
 export function cambiarHttpPorHttps(enlace) {
-  return enlace.replace('http', 'https')
+  return enlace.replace('http:', 'https:')
 }
 
 function initRespuestaPartido(respuesta) {
